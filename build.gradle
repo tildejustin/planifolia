@@ -13,7 +13,7 @@ base {
 repositories {
     maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots" }
     maven { url "https://jitpack.io" }
-    // flatDir { dirs "libs" }
+     flatDir { dirs "libs" }
 }
 
 loom {
@@ -32,6 +32,9 @@ dependencies {
     mappings variantOf(libs.yarn.mappings) { classifier "v2" }
     modImplementation libs.fabric.loader
     vineflowerDecompilerClasspath libs.vineflower
+    include(implementation(annotationProcessor libs.mixin.squared.get()))
+    //noinspection DependencyNotationArgument
+    modImplementation(name: "sodium-fabric-mc1.17.1-0.3.4+build.13")
 }
 
 processResources {
