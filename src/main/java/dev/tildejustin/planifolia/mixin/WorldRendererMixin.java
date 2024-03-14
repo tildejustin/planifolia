@@ -1,7 +1,7 @@
 package dev.tildejustin.planifolia.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.*;
-import dev.tildejustin.planifolia.mixin.acccessor.SodiumWorldRendererAccessor;
+import dev.tildejustin.planifolia.mixin.accessor.SodiumWorldRendererAccessor;
 import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
 import net.minecraft.client.render.WorldRenderer;
 import org.spongepowered.asm.mixin.Mixin;

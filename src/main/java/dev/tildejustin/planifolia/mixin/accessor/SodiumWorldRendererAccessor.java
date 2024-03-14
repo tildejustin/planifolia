@@ -1,4 +1,4 @@
-package dev.tildejustin.planifolia.mixin.acccessor;
+package dev.tildejustin.planifolia.mixin.accessor;
 
 import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
 import org.spongepowered.asm.mixin.*;
