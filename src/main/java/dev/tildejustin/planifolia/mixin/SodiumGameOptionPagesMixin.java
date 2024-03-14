@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.*;
 @Mixin(value = SodiumGameOptionPages.class, remap = false)
 public abstract class SodiumGameOptionPagesMixin {
     @ModifyArg(
-            method = "lambda$general$3",
+            method = "lambda$general$6",
             at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/gui/options/control/SliderControl;<init>(Lme/jellysquid/mods/sodium/client/gui/options/Option;IIILme/jellysquid/mods/sodium/client/gui/options/control/ControlValueFormatter;)V"),
             index = 2,
             remap = false
