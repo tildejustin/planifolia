@@ -1,24 +1,23 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "planifolia",
   "version": "${version}",
-  "name": "",
-  "description": "",
+  "name": "planifolia",
+  "description": "vanilla VideoOptionsScreen for sodium",
   "authors": [
     "tildejustin"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/modid",
-    "sources": "https://github.com/tildejustin/modid",
-    "issues": "https://github.com/tildejustin/modid/issues"
+    "homepage": "https://modrinth.com/mod/planifolia",
+    "sources": "https://github.com/tildejustin/planifolia",
+    "issues": "https://github.com/tildejustin/planifolia/issues"
   },
   "license": "MIT",
   "environment": "*",
   "mixins": [
-    "modid.mixins.json"
+    "planifolia.mixins.json"
   ],
   "depends": {
-    "minecraft": "*",
-    "fabricloader": ">=0.15.0"
+    "sodium": "*"
   }
 }
