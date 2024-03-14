@@ -8,6 +8,7 @@ import net.minecraft.client.gui.screen.option.*;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = OptionsScreen.class, priority = 1005)
 public abstract class OptionsScreenMixin extends Screen {
@@ -17,10 +18,10 @@ public abstract class OptionsScreenMixin extends Screen {
 
     @Dynamic
     @TargetHandler(mixin = "me.jellysquid.mods.sodium.mixin.features.options.MixinOptionsScreen", name = "open")
-    @WrapOperation(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MinecraftClient;setScreen(Lnet/minecraft/client/gui/screen/Screen;)V"))
-    private void openVanillaMenu(MinecraftClient instance, Screen screen, Operation<Void> original) {
+    @WrapOperation(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;setReturnValue(Ljava/lang/Object;)V"))
+    private void openVanillaMenu(CallbackInfoReturnable<Screen> instance, Object screen, Operation<Void> original) {
         if (MinecraftClient.getInstance().world != null) {
-            this.client.setScreen(new VideoOptionsScreen(this, this.client.options));
+            instance.setReturnValue(new VideoOptionsScreen(this, this.client.options));
         } else {
             original.call(instance, screen);
         }

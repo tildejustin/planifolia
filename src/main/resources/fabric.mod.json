@@ -19,5 +19,6 @@
   ],
   "depends": {
     "sodium": "*"
-  }
+  },
+  "accessWidener": "planifolia.accesswidener"
 }
