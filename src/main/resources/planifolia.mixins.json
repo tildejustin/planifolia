@@ -4,11 +4,12 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "SodiumGameOptionPagesMixin",
-    "accessor.OptionAccessor",
+    "SodiumGameOptions$GraphicsQualityMixin",
     "accessor.SodiumWorldRendererAccessor"
   ],
   "client": [
-    "OptionMixin",
+    "GameOptionsMixin",
+    "InGameHudMixin",
     "OptionsScreenMixin",
     "VideoOptionsScreenMixin",
     "WorldRendererMixin"
