@@ -9,7 +9,6 @@
   ],
   "client": [
     "GameOptionsMixin",
-    "InGameHudMixin",
     "OptionsScreenMixin",
     "VideoOptionsScreenMixin",
     "WorldRendererMixin"
