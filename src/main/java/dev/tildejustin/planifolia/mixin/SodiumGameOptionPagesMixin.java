@@ -38,13 +38,4 @@ public abstract class SodiumGameOptionPagesMixin {
     private static OptionGroup.Builder removeLeaveQualityOption(OptionGroup.Builder instance, Option<?> option) {
         return instance;
     }
-
-    @Redirect(
-            method = "quality",
-            at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;add(Lme/jellysquid/mods/sodium/client/gui/options/Option;)Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;", ordinal = 0),
-            slice = @Slice(from = @At(value = "CONSTANT", args = "stringValue=sodium.options.vignette.name")), remap = false
-    )
-    private static OptionGroup.Builder removeVignetteOption(OptionGroup.Builder instance, Option<?> option) {
-        return instance;
-    }
 }
