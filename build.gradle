@@ -35,7 +35,7 @@ dependencies {
     vineflowerDecompilerClasspath libs.vineflower
     include(implementation(annotationProcessor libs.mixin.squared.get()))
     //noinspection DependencyNotationArgument
-    modImplementation(name: "sodium-fabric-mc1.19.4-0.4.10+build.24")
+    modImplementation(name: "sodium-fabric-1.20.6-0.6.0-snapshot+mc1.20.6-local")
 }
 
 processResources {

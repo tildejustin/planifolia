@@ -10,18 +10,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(InGameHud.class)
 public abstract class InGameHudMixin {
     @Dynamic
-    @Group(min = 1, max = 1)
-    @TargetHandler(mixin = "me.jellysquid.mods.sodium.mixin.features.options.MixinInGameHud", name = "redirectFancyGraphicsVignette")
-    @Inject(method = "@MixinSquared:Handler", at = @At("HEAD"), cancellable = true, require = 0)
+    @TargetHandler(mixin = "net.caffeinemc.mods.sodium.mixin.features.options.overlays.GuiMixin", name = "redirectFancyGraphicsVignette")
+    @Inject(method = "@MixinSquared:Handler", at = @At("HEAD"), cancellable = true)
     private void useVanillaVignetteTrigger(CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(MinecraftClient.isFancyGraphicsOrBetter());
-    }
-
-    @Dynamic
-    @Group
-    @TargetHandler(mixin = "me.jellysquid.mods.sodium.mixin.features.options.overlays.InGameHudMixin", name = "redirectFancyGraphicsVignette")
-    @Inject(method = "@MixinSquared:Handler", at = @At("HEAD"), cancellable = true, require = 0)
-    private void useVanillaVignetteTrigger2(CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(MinecraftClient.isFancyGraphicsOrBetter());
     }
 }

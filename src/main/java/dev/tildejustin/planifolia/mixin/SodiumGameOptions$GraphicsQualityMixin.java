@@ -1,6 +1,6 @@
 package dev.tildejustin.planifolia.mixin;
 
-import me.jellysquid.mods.sodium.client.gui.SodiumGameOptions;
+import net.caffeinemc.mods.sodium.client.gui.SodiumGameOptions;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.GraphicsMode;
 import org.spongepowered.asm.mixin.*;
