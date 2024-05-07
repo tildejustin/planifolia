@@ -18,8 +18,8 @@ public enum DoubleSliderCallbacksGamma implements SimpleOption.SliderCallbacks<D
     @Override
     public double toSliderProgress(Double value) {
         // when not in a world, value may be is 0 -> 5, and is scaled to 0 -> 1 on the slider
-        // when in a world, any value > 1 will be rendered at 1, otherwise the box renders without a slider
-        return MinecraftClient.getInstance().world == null ? value / 5 : Math.min(value, 1);
+        // when in a world, any value > 1 will be rendered at 1, via SliderWidgetMixin
+        return MinecraftClient.getInstance().world == null ? value / 5 : value;
     }
 
     @Override
