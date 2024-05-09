@@ -1,4 +1,4 @@
-package dev.tildejustin.planifolia.mixin;
+package dev.tildejustin.planifolia.mixin.universal;
 
 import dev.tildejustin.planifolia.DoubleSliderCallbacksGamma;
 import net.minecraft.client.option.*;

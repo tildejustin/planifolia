@@ -1,4 +1,4 @@
-package dev.tildejustin.planifolia.mixin;
+package dev.tildejustin.planifolia.mixin.universal;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.gui.widget.SliderWidget;
