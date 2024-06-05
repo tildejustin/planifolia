@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "id": "planifolia",
   "version": "${version}",
-  "name": "planifolia",
-  "description": "vanilla VideoOptionsScreen for sodium",
+  "name": "Planifolia",
+  "description": "Vanilla VideoOptionsScreen for sodium",
   "authors": [
     "tildejustin"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/planifolia",
+    "homepage": "https://github.com/tildejustin/planifolia",
     "sources": "https://github.com/tildejustin/planifolia",
     "issues": "https://github.com/tildejustin/planifolia/issues"
   },
