@@ -15,7 +15,14 @@ public abstract class VideoOptionsScreenMixin {
     private static final CyclingOption<Boolean> ENTITY_CULLING = CyclingOption.create(
             "Entity Culling",
             gameOptions -> SodiumClientMod.options().performance.useEntityCulling,
-            (gameOptions, option, entityCulling) -> SodiumClientMod.options().performance.useEntityCulling = entityCulling
+            (gameOptions, option, value) -> SodiumClientMod.options().performance.useEntityCulling = value
+    );
+
+    @Unique
+    private static final CyclingOption<Boolean> FOG_OCCLUSION = CyclingOption.create(
+            "Fog Occlusion",
+            gameOptions -> SodiumClientMod.options().performance.useFogOcclusion,
+            (gameOptions, option, value) -> SodiumClientMod.options().performance.useFogOcclusion = value
     );
 
     @Mutable
@@ -25,8 +32,9 @@ public abstract class VideoOptionsScreenMixin {
 
     @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void addEntityCullingOption(CallbackInfo ci) {
-        Option[] newOptions = Arrays.copyOf(OPTIONS, OPTIONS.length + 1);
-        newOptions[newOptions.length - 1] = ENTITY_CULLING;
+        Option[] newOptions = Arrays.copyOf(OPTIONS, OPTIONS.length + 2);
+        newOptions[newOptions.length - 2] = ENTITY_CULLING;
+        newOptions[newOptions.length - 1] = FOG_OCCLUSION;
         OPTIONS = newOptions;
     }
 }
