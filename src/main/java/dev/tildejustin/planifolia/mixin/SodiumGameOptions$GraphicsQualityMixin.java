@@ -11,7 +11,7 @@ public abstract class SodiumGameOptions$GraphicsQualityMixin {
      * @author tildejustin
      * @reason always defer to overall graphics settings
      */
-    @Overwrite(remap = false)
+    @Overwrite
     public boolean isFancy(GraphicsMode graphicsMode) {
         return MinecraftClient.isFancyGraphicsOrBetter();
     }

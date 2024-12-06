@@ -11,8 +11,9 @@ base {
 }
 
 repositories {
+    maven { url "https://api.modrinth.com/maven" }
     maven { url "https://jitpack.io" }
-     flatDir { dirs "libs" }
+    flatDir { dirs "libs" }
 }
 
 loom {
@@ -32,8 +33,7 @@ dependencies {
     modImplementation libs.fabric.loader
     vineflowerDecompilerClasspath libs.vineflower
     include(implementation(annotationProcessor libs.mixin.squared.get()))
-    //noinspection DependencyNotationArgument
-    modImplementation(name: "sodium-fabric-mc1.17.1-0.3.4+rev.8a57e61")
+    modImplementation(libs.sodium)
 }
 
 processResources {

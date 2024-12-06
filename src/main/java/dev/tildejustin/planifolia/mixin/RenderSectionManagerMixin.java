@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(RenderSectionManager.class)
+@Mixin(value = RenderSectionManager.class, remap = false)
 public class RenderSectionManagerMixin {
     @Shadow
     @Final

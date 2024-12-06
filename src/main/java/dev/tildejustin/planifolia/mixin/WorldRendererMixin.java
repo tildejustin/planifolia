@@ -10,10 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(WorldRenderer.class)
 public abstract class WorldRendererMixin {
     @WrapOperation(method = "getEntitiesDebugString", at = @At(value = "FIELD", target = "Lnet/minecraft/client/render/WorldRenderer;regularEntityCount:I"))
-    private int hidEntityCount(WorldRenderer instance, Operation<Integer> original) {
-        if (((SodiumWorldRendererAccessor) SodiumWorldRenderer.instance()).getUseEntityCulling()) {
-            return -1;
-        }
-        return original.call(instance);
+    private int hideEntityCount(WorldRenderer instance, Operation<Integer> original) {
+        return ((SodiumWorldRendererAccessor) SodiumWorldRenderer.instance()).getUseEntityCulling() ? -1 : original.call(instance);
     }
 }

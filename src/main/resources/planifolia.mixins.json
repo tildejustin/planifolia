@@ -2,19 +2,18 @@
   "required": true,
   "package": "dev.tildejustin.planifolia.mixin",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [
+  "client": [
     "BlockOcclusionCacheMixin",
+    "DebugHudMixin",
+    "GameOptionsMixin",
+    "OptionsScreenMixin",
     "RenderSectionManagerMixin",
     "SodiumGameOptionPagesMixin",
     "SodiumGameOptions$GraphicsQualityMixin",
     "SodiumWorldRendererMixin",
-    "accessor.SodiumWorldRendererAccessor"
-  ],
-  "client": [
-    "GameOptionsMixin",
-    "OptionsScreenMixin",
     "VideoOptionsScreenMixin",
-    "WorldRendererMixin"
+    "WorldRendererMixin",
+    "accessor.SodiumWorldRendererAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

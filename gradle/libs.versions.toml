@@ -1,10 +1,11 @@
 [versions]
 minecraft = "1.17.1"
 yarn_mappings = "1.17.1+build.65"
-fabric_loader = "0.15.7"
-loom = "1.5-SNAPSHOT"
+fabric_loader = "0.16.9"
+loom = "1.8-SNAPSHOT"
 vineflower = "1.10.1"
-mixin_squared = "0.1.2-beta.4"
+mixin_squared = "0.2.0"
+sodium = "mc1.17.1-0.3.4"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -12,6 +13,7 @@ yarn_mappings = { module = "net.fabricmc:yarn", version.ref = "yarn_mappings" }
 fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_loader" }
 vineflower = { module = "org.vineflower:vineflower", version.ref = "vineflower" }
 mixin_squared = { module = "com.github.bawnorton.mixinsquared:mixinsquared-fabric", version.ref = "mixin_squared" }
+sodium = { module = "maven.modrinth:sodium", version.ref = "sodium" }
 
 [plugins]
 fabric_loom = { id = "fabric-loom", version.ref = "loom" }
