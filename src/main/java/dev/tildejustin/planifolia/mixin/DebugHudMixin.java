@@ -36,7 +36,7 @@ public abstract class DebugHudMixin {
     }
 
     @Dynamic
-    @TargetHandler(mixin = "net.fabricmc.fabric.mixin.renderer.client.debughud.DebugHudMixin", name = "getLeftText")
+    @TargetHandler(mixin = "net.fabricmc.fabric.mixin.client.rendering.DebugHudMixin", name = "getLeftText")
     @Inject(method = "@MixinSquared:Handler", at = @At("HEAD"), cancellable = true)
     private void getLeftText(CallbackInfo ci) {
         if (!FabricLoader.getInstance().isModLoaded("fabric")) {
