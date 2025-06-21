@@ -29,6 +29,9 @@
   "custom": {
     "sodium:options": {
       "mixin.features.gui.hooks.settings": false
+    },
+    "lithium:options": {
+      "mixin.minimal_nonvanilla": false
     }
   }
 }
