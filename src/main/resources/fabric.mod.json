@@ -29,6 +29,10 @@
   "custom": {
     "sodium:options": {
       "mixin.features.gui.hooks.settings": false
+    },
+    "lithium:options": {
+      "mixin.minimal_nonvanilla": false,
+      "mixin.world.block_entity_ticking.sleeping.chest_animation": false
     }
   }
 }
