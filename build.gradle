@@ -32,7 +32,6 @@ dependencies {
     minecraft libs.minecraft
     mappings variantOf(libs.yarn.mappings) { classifier "v2" }
     modImplementation libs.fabric.loader
-    vineflowerDecompilerClasspath libs.vineflower
     include(implementation(annotationProcessor libs.mixin.squared.get()))
     modImplementation(libs.sodium)
 }
