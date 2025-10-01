@@ -17,7 +17,7 @@ public abstract class BlendedColorProviderMixin<T> {
     protected abstract int getColor(LevelSlice levelSlice, T t, BlockPos blockPos);
 
     @Inject(method = "getColors", at = @At("HEAD"), cancellable = true)
-    private void disableBiomeBlendingWhenAppropriate(LevelSlice slice, BlockPos pos, BlockPos.Mutable scratchPos, T state, ModelQuadView quad, int[] output, CallbackInfo ci) {
+    private void disableBiomeBlendingWhenAppropriate(LevelSlice slice, BlockPos pos, BlockPos.Mutable scratchPos, T state, ModelQuadView quad, int[] output, boolean smooth, CallbackInfo ci) {
         if (MinecraftClient.getInstance().options.getBiomeBlendRadius().getValue() == 0) {
             Arrays.fill(output, this.getColor(slice, state, pos));
             ci.cancel();

@@ -5,8 +5,8 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.GraphicsMode;
 import org.spongepowered.asm.mixin.*;
 
-@Mixin(value = SodiumGameOptions.GraphicsQuality.class, remap = false)
-public abstract class SodiumGameOptions$GraphicsQualityMixin {
+@Mixin(value = SodiumGameOptions.WeatherQuality.class, remap = false)
+public abstract class SodiumGameOptions$WeatherQualityMixin {
     /**
      * @author tildejustin
      * @reason always defer to overall graphics settings

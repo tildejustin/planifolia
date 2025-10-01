@@ -6,12 +6,13 @@
   "client": [
     "BlendedColorProviderMixin",
     "BlockOcclusionCacheMixin",
-    "DebugHudMixin",
     "OptionsScreenMixin",
     "RenderSectionManagerMixin",
     "ResourcePackManagerMixin",
     "SodiumGameOptionPagesMixin",
-    "SodiumGameOptions$GraphicsQualityMixin",
+    "SodiumGameOptions$LeavesQualityMixin",
+    "SodiumGameOptions$WeatherQualityMixin",
+    "DebugHudEntriesMixin",
     "VideoOptionsScreenMixin",
     "WorldRendererMixin",
     "accessor.SodiumWorldRendererAccessor",
@@ -20,5 +21,8 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "mixins": [
+    "SodiumDebugEntryMixin"
+  ]
 }

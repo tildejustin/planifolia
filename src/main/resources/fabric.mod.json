@@ -23,7 +23,7 @@
     "planifolia.mixins.json"
   ],
   "suggests": {
-    "sodium": ">=0.6"
+    "sodium": ">=0.7"
   },
   "accessWidener": "planifolia.accesswidener",
   "custom": {
