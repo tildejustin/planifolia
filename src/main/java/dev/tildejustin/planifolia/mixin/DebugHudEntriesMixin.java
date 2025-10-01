@@ -1,5 +1,6 @@
 package dev.tildejustin.planifolia.mixin;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.hud.debug.DebugHudEntries;
 import net.minecraft.client.gui.hud.debug.DebugHudEntry;
 import net.minecraft.util.Identifier;
@@ -16,7 +17,7 @@ public class DebugHudEntriesMixin {
 
     @Inject(method = "register", at = @At("HEAD"), cancellable = true)
     private static void noFabricActiveRenderer(Identifier id, DebugHudEntry entry, CallbackInfoReturnable<Identifier> cir) {
-        if (id.equals(FABRIC_ACTIVE_RENDERER)) {
+        if (id.equals(FABRIC_ACTIVE_RENDERER) && !FabricLoader.getInstance().isModLoaded("fabric")) {
             cir.setReturnValue(id);
         }
     }
