@@ -13,7 +13,7 @@ import java.util.List;
 @Mixin(WorldRenderer.class)
 public abstract class WorldRendererMixin {
     @WrapOperation(method = "getEntitiesDebugString", at = @At(value = "INVOKE", target = "Ljava/util/List;size()I"))
-    private int hideEntityCount(List instance, Operation<Integer> original) {
+    private int hideEntityCount(List<?> instance, Operation<Integer> original) {
         return ((SodiumWorldRendererAccessor) SodiumWorldRenderer.instance()).getUseEntityCulling() ? -1 : original.call(instance);
     }
 }
