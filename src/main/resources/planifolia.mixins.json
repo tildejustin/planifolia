@@ -9,7 +9,6 @@
     "OptionsScreenMixin",
     "RenderSectionManagerMixin",
     "ResourcePackManagerMixin",
-    "SodiumDebugEntryMixin",
     "SodiumGameOptionPagesMixin",
     "SodiumGameOptions$LeavesQualityMixin",
     "SodiumGameOptions$WeatherQualityMixin",
