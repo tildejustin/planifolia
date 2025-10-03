@@ -1,0 +1,19 @@
+package dev.tildejustin.planifolia.mixin;
+
+import net.caffeinemc.mods.sodium.client.gui.SodiumGameOptions;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.option.GraphicsMode;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+
+@Mixin(value = SodiumGameOptions.LeavesQuality.class, remap = false)
+public abstract class SodiumGameOptions$LeavesQualityMixin {
+    /**
+     * @author tildejustin
+     * @reason always defer to overall graphics settings
+     */
+    @Overwrite
+    public boolean isFancy(GraphicsMode graphicsMode) {
+        return MinecraftClient.isFancyGraphicsOrBetter();
+    }
+}

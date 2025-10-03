@@ -4,14 +4,14 @@
   "compatibilityLevel": "JAVA_8",
   "plugin": "dev.tildejustin.planifolia.PlanifoliaMixinPlugin",
   "client": [
-    "BlendedColorProviderMixin",
     "BlockOcclusionCacheMixin",
-    "DebugHudMixin",
+    "DebugHudEntriesMixin",
     "OptionsScreenMixin",
     "RenderSectionManagerMixin",
     "ResourcePackManagerMixin",
     "SodiumGameOptionPagesMixin",
-    "SodiumGameOptions$GraphicsQualityMixin",
+    "SodiumGameOptions$LeavesQualityMixin",
+    "SodiumGameOptions$WeatherQualityMixin",
     "VideoOptionsScreenMixin",
     "WorldRendererMixin",
     "accessor.SodiumWorldRendererAccessor",
@@ -20,5 +20,7 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "mixins": [
+  ]
 }
