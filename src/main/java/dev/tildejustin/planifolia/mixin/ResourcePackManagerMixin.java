@@ -12,7 +12,7 @@ import java.util.Set;
 @Mixin(value = ResourcePackManager.class, priority = 1050)
 public abstract class ResourcePackManagerMixin {
     @Dynamic
-    @TargetHandler(mixin = "net.fabricmc.fabric.mixin.resource.loader.ResourcePackManagerMixin", name = "construct")
+    @TargetHandler(mixin = "net.fabricmc.fabric.mixin.resource.PackRepositoryMixin", name = "construct")
     @WrapOperation(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Ljava/util/Set;add(Ljava/lang/Object;)Z"))
     private boolean removeFabricDataPacks(Set<ResourcePackProvider> providers, Object provider, Operation<Boolean> operation) {
         return FabricLoader.getInstance().isModLoaded("fabric") ? operation.call(providers, provider) : true;

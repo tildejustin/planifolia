@@ -11,8 +11,6 @@
     "RenderSectionManagerMixin",
     "ResourcePackManagerMixin",
     "SodiumGameOptionPagesMixin",
-    "SodiumGameOptions$LeavesQualityMixin",
-    "SodiumGameOptions$WeatherQualityMixin",
     "VideoOptionsScreenMixin",
     "WorldRendererMixin",
     "accessor.SodiumWorldRendererAccessor",

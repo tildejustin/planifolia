@@ -1,10 +1,10 @@
 [versions]
-minecraft = "1.21.10-rc1"
-yarn_mappings = "1.21.10-rc1+build.1"
-fabric_loader = "0.17.2"
-loom = "1.11-SNAPSHOT"
+minecraft = "1.21.11"
+yarn_mappings = "1.21.11+build.3"
+fabric_loader = "0.18.4"
+loom = "1.14-SNAPSHOT"
 mixin_squared = "0.2.0"
-sodium = "mc1.21.9-0.7.0-fabric"
+sodium = "mc1.21.11-0.8.2-fabric"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
