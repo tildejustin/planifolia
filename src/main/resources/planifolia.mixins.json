@@ -12,6 +12,7 @@
     "ResourcePackManagerMixin",
     "SodiumGameOptionPagesMixin",
     "SodiumGameOptions$GraphicsQualityMixin",
+    "SpriteContentsMixin",
     "VideoOptionsScreenMixin",
     "WorldRendererMixin",
     "accessor.SodiumWorldRendererAccessor",
