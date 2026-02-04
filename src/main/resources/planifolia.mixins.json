@@ -13,6 +13,7 @@
     "SodiumGameOptionPagesMixin",
     "SodiumGameOptions$LeavesQualityMixin",
     "SodiumGameOptions$WeatherQualityMixin",
+    "SpriteContentsMixin",
     "VideoOptionsScreenMixin",
     "WorldRendererMixin",
     "accessor.SodiumWorldRendererAccessor",
