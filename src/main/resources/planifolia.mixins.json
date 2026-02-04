@@ -13,6 +13,7 @@
     "SodiumGameOptionPagesMixin",
     "SodiumGameOptions$GraphicsQualityMixin",
     "SodiumWorldRendererMixin",
+    "SpriteContentsMixin",
     "VideoOptionsScreenMixin",
     "WorldRendererMixin",
     "accessor.SodiumOptionsGUIAccessor",
