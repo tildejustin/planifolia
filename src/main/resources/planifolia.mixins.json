@@ -7,6 +7,7 @@
     "BlendedColorProviderMixin",
     "BlockOcclusionCacheMixin",
     "DebugHudMixin",
+    "ModNioResourcePackMixin",
     "OptionsScreenMixin",
     "RenderSectionManagerMixin",
     "ResourcePackManagerMixin",
