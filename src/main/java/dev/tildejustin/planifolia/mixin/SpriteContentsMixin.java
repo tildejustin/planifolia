@@ -32,7 +32,7 @@ public class SpriteContentsMixin {
     }
 
     @Dynamic
-    @TargetHandler(mixin = "net.caffeinemc.mods.sodium.mixin.features.textures.scan.SpriteContentsMixin", name = "sodium$beforeGenerateMipLevels", prefix = "wrapOperation")
+    @TargetHandler(mixin = "me.jellysquid.mods.sodium.mixin.features.textures.scan.SpriteContentsMixin", name = "sodium$beforeGenerateMipLevels", prefix = "wrapOperation")
     @Inject(method = "@MixinSquared:Handler", at = @At("HEAD"), cancellable = true)
     public void skipSodiumScan(SpriteContents instance, NativeImage nativeImage, Operation<Void> original, CallbackInfo ci) {
         if (idRef != null && idRef.getPath().contains("leaves")) {
