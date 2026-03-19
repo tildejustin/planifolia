@@ -7,7 +7,7 @@ import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 
-@Mixin(targets = "net.fabricmc.fabric.impl.resource.loader.ModNioResourcePack$1")
+@Mixin(targets = "net.fabricmc.fabric.impl.resource.pack.ModNioPackResources$1")
 public abstract class ModNioResourcePackMixin {
     @Dynamic
     @WrapWithCondition(

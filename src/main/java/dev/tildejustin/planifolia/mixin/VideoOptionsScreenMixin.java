@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 @Mixin(VideoOptionsScreen.class)
 public abstract class VideoOptionsScreenMixin {
-    @Inject(method = "getInterfaceOptions", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "getQualityOptions", at = @At("TAIL"), cancellable = true)
     private static void addEntityCullingOption(GameOptions gameOptions, CallbackInfoReturnable<SimpleOption<?>[]> cir) {
         SimpleOption<?>[] newOptions = Arrays.copyOf(cir.getReturnValue(), cir.getReturnValue().length + 2);
         newOptions[newOptions.length - 2] = SimpleOption.ofBoolean(

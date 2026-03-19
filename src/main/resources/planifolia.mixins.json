@@ -12,7 +12,6 @@
     "RenderSectionManagerMixin",
     "ResourcePackManagerMixin",
     "SodiumGameOptionPagesMixin",
-    "SpriteContentsMixin",
     "VideoOptionsScreenMixin",
     "WorldRendererMixin",
     "accessor.SodiumWorldRendererAccessor",
