@@ -2,10 +2,9 @@ package dev.tildejustin.planifolia.mixin;
 
 import com.bawnorton.mixinsquared.TargetHandler;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.client.texture.NativeImage;
 import net.minecraft.client.texture.SpriteContents;
-import net.minecraft.client.texture.SpriteDimensions;
-import net.minecraft.resource.metadata.ResourceMetadata;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,8 +25,8 @@ public class SpriteContentsMixin {
     @Unique
     private static Identifier idRef = null;
 
-    @Inject(method = "<init>", at = @At("HEAD"))
-    private static void storeIdentifier(Identifier id, SpriteDimensions dimensions, NativeImage image, ResourceMetadata metadata, CallbackInfo ci) {
+    @Inject(method = "<init>*", at = @At("HEAD"))
+    private static void storeIdentifier(CallbackInfo ci, @Local(argsOnly = true) Identifier id) {
         idRef = id;
     }
 
