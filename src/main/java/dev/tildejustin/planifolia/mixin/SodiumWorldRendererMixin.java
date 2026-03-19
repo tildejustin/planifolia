@@ -14,13 +14,15 @@ public class SodiumWorldRendererMixin {
     @Final
     private MinecraftClient client;
 
-    @Inject(method = "drawChunkLayer", at = @At("HEAD"))
+    @Dynamic
+    @Inject(method = {"drawChunkLayer", "Lme/jellysquid/mods/sodium/client/render/SodiumWorldRenderer;drawChunkLayer(Lnet/minecraft/class_1921;Lme/jellysquid/mods/sodium/client/render/chunk/ChunkRenderMatrices;DDD)V"}, at = @At("HEAD"), require = 1)
     private void startProfiler(CallbackInfo ci, @Local(argsOnly = true) RenderLayer renderLayer) {
         this.client.getProfiler().push("filterempty");
         this.client.getProfiler().swap(() -> "render_" + renderLayer);
     }
 
-    @Inject(method = "drawChunkLayer", at = @At("TAIL"))
+    @Dynamic
+    @Inject(method = {"drawChunkLayer", "Lme/jellysquid/mods/sodium/client/render/SodiumWorldRenderer;drawChunkLayer(Lnet/minecraft/class_1921;Lme/jellysquid/mods/sodium/client/render/chunk/ChunkRenderMatrices;DDD)V"}, at = @At("TAIL"), require = 1)
     private void endProfiler(CallbackInfo ci) {
         this.client.getProfiler().pop();
     }
