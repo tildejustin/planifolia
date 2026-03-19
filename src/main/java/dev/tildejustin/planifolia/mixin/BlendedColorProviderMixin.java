@@ -13,14 +13,19 @@ import java.util.Arrays;
 @Mixin(targets = "me.jellysquid.mods.sodium.client.model.quad.blender.BlendedColorProvider", remap = false)
 public abstract class BlendedColorProviderMixin<T> {
     @Shadow
-    protected abstract int getColor(WorldSlice levelSlice, T t, BlockPos blockPos);
+    protected abstract int getColor(WorldSlice levelSlice, int x, int y, int z);
 
     @Dynamic
     @Inject(method = "getColors", at = @At("HEAD"), cancellable = true)
-    private void disableBiomeBlendingWhenAppropriate(WorldSlice slice, BlockPos pos, BlockPos.Mutable scratchPos, T state, ModelQuadView quad, int[] output, CallbackInfo ci) {
+    private void disableBiomeBlendingWhenAppropriate(WorldSlice slice, BlockPos pos, T state, ModelQuadView quad, int[] output, CallbackInfo ci) {
         if (MinecraftClient.getInstance().options.getBiomeBlendRadius().getValue() == 0) {
-            Arrays.fill(output, this.getColor(slice, state, pos));
+            Arrays.fill(output, BlendedColorProviderMixin.toABGR(this.getColor(slice, pos.getX(), pos.getY(), pos.getZ())));
             ci.cancel();
         }
+    }
+
+    @Unique
+    private static int toABGR(int color) {
+        return Integer.reverseBytes(Integer.rotateLeft(color, 8));
     }
 }
