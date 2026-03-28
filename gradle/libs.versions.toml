@@ -4,7 +4,7 @@ yarn_mappings = "1.21.11+build.3"
 fabric_loader = "0.18.4"
 loom = "1.14-SNAPSHOT"
 mixin_squared = "0.2.0"
-sodium = "mc1.21.11-0.8.2-fabric"
+sodium = "mc1.21.11-0.8.7-fabric"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }

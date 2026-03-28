@@ -14,8 +14,7 @@ public abstract class MinecraftClientMixin {
     private void removeSodiumDebugHudEntry(CallbackInfo ci) {
         // Note for porting, sodium does a gross accessor to add its debug hud entry, this removes it, in future
         // versions they may use something from Fabric API, so adjust accordingly
-        assert DebugScreenEntriesAccessor.getEntries() != null;
-        DebugScreenEntriesAccessor.getEntries().remove(Identifier.of("sodium", "debug_full"));
-        DebugScreenEntriesAccessor.getEntries().remove(Identifier.of("sodium", "debug_reduced"));
+        DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.of("sodium", "debug_full"));
+        DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.of("sodium", "debug_reduced"));
     }
 }
