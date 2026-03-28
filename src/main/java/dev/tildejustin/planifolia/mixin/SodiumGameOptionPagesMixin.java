@@ -1,7 +1,7 @@
 package dev.tildejustin.planifolia.mixin;
 
 import net.caffeinemc.mods.sodium.client.gui.SodiumConfigBuilder;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
 
@@ -14,6 +14,6 @@ public abstract class SodiumGameOptionPagesMixin {
             index = 1
     )
     private static int modifyGammaSliderMaximum(int original) {
-        return MinecraftClient.getInstance().world == null ? 500 : original;
+        return Minecraft.getInstance().level == null ? 500 : original;
     }
 }

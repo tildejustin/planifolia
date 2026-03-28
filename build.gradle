@@ -30,10 +30,9 @@ loom {
 
 dependencies {
     minecraft libs.minecraft
-    mappings variantOf(libs.yarn.mappings) { classifier "v2" }
-    modImplementation libs.fabric.loader
+    implementation libs.fabric.loader
     include(implementation(annotationProcessor libs.mixin.squared.get()))
-    modImplementation(libs.sodium)
+    implementation(libs.sodium)
 }
 
 processResources {
@@ -45,12 +44,12 @@ processResources {
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
     if (JavaVersion.current().isJava9Compatible()) {
-        it.options.release.set(21)
+        it.options.release.set(25)
     }
 }
 
 java {
-    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_25
 }
 
 jar {
