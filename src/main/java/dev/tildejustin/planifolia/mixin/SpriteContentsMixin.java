@@ -1,25 +1,23 @@
 package dev.tildejustin.planifolia.mixin;
 
 import com.bawnorton.mixinsquared.TargetHandler;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import net.minecraft.client.texture.*;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.*;
-import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(value = SpriteContents.class, priority = 1500)
 public class SpriteContentsMixin {
-    @Mutable
     @Shadow
     @Final
-    private NativeImage image;
+    private Identifier id;
 
+    @Dynamic
     @TargetHandler(mixin = "me.jellysquid.mods.sodium.mixin.features.textures.mipmaps.SpriteContentsMixin", name = "sodium$beforeGenerateMipLevels", prefix = "redirect")
-    @Inject(method = "@MixinSquared:Handler", at = @At("HEAD"), cancellable = true, require = 0)
-    public void skipSodiumScan(SpriteContents instance, NativeImage nativeImage, Identifier identifier, CallbackInfo ci) {
-        if (identifier != null && identifier.getPath().contains("leaves")) {
-            this.image = nativeImage;
-            ci.cancel();
-        }
+    // sodium$fillInTransparentPixelColors is an @Unique merged method
+    @WrapWithCondition(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lnet/minecraft/class_7764;sodium$fillInTransparentPixelColors(Lnet/minecraft/class_1011;)V"))
+    public boolean skipSodiumFill(NativeImage nativeImage) {
+        return !id.getPath().contains("leaves");
     }
 }
