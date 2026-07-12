@@ -5,6 +5,7 @@
   "plugin": "dev.tildejustin.planifolia.PlanifoliaMixinPlugin",
   "client": [
     "DebugHudEntriesMixin",
+    "LevelExtractorMixin",
     "MinecraftClientMixin",
     "ModNioResourcePackMixin",
     "OptionsScreenMixin",
