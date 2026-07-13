@@ -16,7 +16,7 @@ public class SpriteContentsMixin {
     @Dynamic
     @TargetHandler(mixin = "me.jellysquid.mods.sodium.mixin.features.textures.mipmaps.SpriteContentsMixin", name = "sodium$beforeGenerateMipLevels", prefix = "redirect")
     // sodium$fillInTransparentPixelColors is an @Unique merged method
-    @WrapWithCondition(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lnet/minecraft/class_7764;sodium$fillInTransparentPixelColors(Lnet/minecraft/class_1011;)V"))
+    @WrapWithCondition(method = "@MixinSquared:Handler", at = @At(value = "INVOKE", target = "Lnet/minecraft/class_7764;sodium$fillInTransparentPixelColors(Lnet/minecraft/class_1011;)V"), require = 0)
     public boolean skipSodiumFill(NativeImage nativeImage) {
         return !id.getPath().contains("leaves");
     }
