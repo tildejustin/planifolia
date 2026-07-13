@@ -4,7 +4,6 @@
   "compatibilityLevel": "JAVA_8",
   "plugin": "dev.tildejustin.planifolia.PlanifoliaMixinPlugin",
   "client": [
-    "BlendedColorProviderMixin",
     "BlockOcclusionCacheMixin",
     "DebugHudMixin",
     "ModNioResourcePackMixin",
@@ -12,7 +11,9 @@
     "RenderSectionManagerMixin",
     "ResourcePackManagerMixin",
     "SodiumGameOptionPagesMixin",
-    "SodiumGameOptions$GraphicsQualityMixin",
+    "SodiumOptionsMixin",
+    "SodiumOptionsMixin$LeavesQualityMixin",
+    "SodiumOptionsMixin$WeatherQualityMixin",
     "SodiumWorldRendererMixin",
     "SpriteContentsMixin",
     "VideoOptionsScreenMixin",

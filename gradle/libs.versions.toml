@@ -2,9 +2,9 @@
 minecraft = "1.21.1"
 yarn_mappings = "1.21.1+build.3"
 fabric_loader = "0.16.14"
-loom = "1.10-SNAPSHOT"
+loom = "1.17-SNAPSHOT"
 mixin_squared = "0.2.0"
-sodium = "mc1.21.1-0.6.0-fabric"
+sodium = "mc1.21.1-0.8.12-fabric"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -14,4 +14,4 @@ mixin_squared = { module = "com.github.bawnorton.mixinsquared:mixinsquared-fabri
 sodium = { module = "maven.modrinth:sodium", version.ref = "sodium" }
 
 [plugins]
-fabric_loom = { id = "fabric-loom", version.ref = "loom" }
+fabric_loom = { id = "net.fabricmc.fabric-loom-remap", version.ref = "loom" }
