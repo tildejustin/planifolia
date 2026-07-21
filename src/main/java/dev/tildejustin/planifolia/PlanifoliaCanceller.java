@@ -18,6 +18,6 @@ public class PlanifoliaCanceller implements MixinCanceller {
         return Arrays.asList(
                 "net.fabricmc.fabric.mixin.resource.loader.client.ClientDataPackManagerMixin",
                 "net.fabricmc.fabric.mixin.resource.loader.client.CreateWorldScreenMixin"
-        ).contains(mixinClassName) && !FabricLoader.getInstance().isModLoaded("fabric");
+        ).contains(mixinClassName) && !FabricLoader.getInstance().isModLoaded("fabric-api");
     }
 }
