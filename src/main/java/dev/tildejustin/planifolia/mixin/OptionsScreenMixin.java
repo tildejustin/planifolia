@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(OptionsScreen.class)
 public abstract class OptionsScreenMixin {
-    @Inject(method = "lambda$init$2", at = @At("HEAD"), cancellable = true, remap = false)
+    @Inject(method = "lambda$init$3", at = @At("HEAD"), cancellable = true, remap = false)
     private void openVanillaMenu(CallbackInfoReturnable<Screen> cir) {
         if (Minecraft.getInstance().level == null) {
             cir.setReturnValue(VideoSettingsScreen.createScreen((Screen) (Object) this));
