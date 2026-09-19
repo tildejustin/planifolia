@@ -17,6 +17,7 @@ public abstract class MinecraftClientMixin {
         // versions they may use something from Fabric API, so adjust accordingly
         DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.of("sodium", "debug_full"));
         DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.of("sodium", "debug_reduced"));
+        DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.of("immediatelyfast", "immediatelyfast"));
     }
 
     @Inject(method = "joinWorld", at = @At("HEAD"))
