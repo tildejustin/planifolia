@@ -19,6 +19,7 @@ public abstract class MinecraftClientMixin {
         DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.fromNamespaceAndPath("sodium", "debug_full"));
         DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.fromNamespaceAndPath("sodium", "debug_reduced"));
         DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.fromNamespaceAndPath("sodium", "fps_percentiles"));
+        DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.fromNamespaceAndPath("immediatelyfast", "immediatelyfast"));
     }
 
     @Inject(method = "setLevel", at = @At("HEAD"))
