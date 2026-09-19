@@ -1,7 +1,7 @@
 [versions]
 minecraft = "26.1"
-fabric_loader = "0.18.5"
-loom = "1.15-SNAPSHOT"
+fabric_loader = "0.19.5"
+loom = "1.17-SNAPSHOT"
 mixin_squared = "0.2.0"
 sodium = "mc26.1-0.8.7-fabric"
 
