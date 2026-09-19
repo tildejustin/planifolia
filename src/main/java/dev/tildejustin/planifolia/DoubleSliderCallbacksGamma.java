@@ -2,7 +2,7 @@ package dev.tildejustin.planifolia;
 
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
-import net.minecraft.client.*;
+import net.minecraft.client.OptionInstance;
 import org.jspecify.annotations.NonNull;
 
 import java.util.Optional;
@@ -11,21 +11,18 @@ public enum DoubleSliderCallbacksGamma implements OptionInstance.SliderableValue
     INSTANCE;
 
     @Override
-    public @NonNull Optional<Double> validateValue(Double value) {
+    public @NonNull Optional<Double> validateValue(@NonNull Double value) {
         return value >= 0.0 && value <= 5.0 ? Optional.of(value) : Optional.empty();
     }
 
     @Override
-    public double toSliderValue(Double value) {
-        // when not in a world, value may be is 0 -> 5, and is scaled to 0 -> 1 on the slider
-        // when in a world, any value > 1 will be rendered at 1, via SliderWidgetMixin
-        return Minecraft.getInstance().level == null ? value / 5 : value;
+    public double toSliderValue(@NonNull Double value) {
+        return Planifolia.restrictGamma() ? value : value / 5;
     }
 
     @Override
-    public Double fromSliderValue(double progress) {
-        // when not in a world, a slider progress is interpreted as being from 0 -> 5, when in a world it is the standard 0 -> 1
-        return Minecraft.getInstance().level == null ? progress * 5 : progress;
+    public @NonNull Double fromSliderValue(double progress) {
+        return Planifolia.restrictGamma() ? progress : progress * 5;
     }
 
     @Override
