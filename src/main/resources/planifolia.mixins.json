@@ -7,6 +7,7 @@
     "BlendedColorProviderMixin",
     "BlockOcclusionCacheMixin",
     "DebugHudMixin",
+    "MinecraftClientMixin",
     "ModNioResourcePackMixin",
     "OptionsScreenMixin",
     "RenderSectionManagerMixin",
