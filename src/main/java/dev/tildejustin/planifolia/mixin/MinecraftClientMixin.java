@@ -1,11 +1,12 @@
 package dev.tildejustin.planifolia.mixin;
 
+import dev.tildejustin.planifolia.Planifolia;
 import net.caffeinemc.mods.sodium.mixin.features.gui.hooks.debug.DebugScreenEntriesAccessor;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MinecraftClient.class)
@@ -16,5 +17,10 @@ public abstract class MinecraftClientMixin {
         // versions they may use something from Fabric API, so adjust accordingly
         DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.of("sodium", "debug_full"));
         DebugScreenEntriesAccessor.sodium$getEntries().remove(Identifier.of("sodium", "debug_reduced"));
+    }
+
+    @Inject(method = "joinWorld", at = @At("HEAD"))
+    private void storeSetLevel(ClientWorld world, CallbackInfo ci) {
+        if (world != null) Planifolia.setLevel = true;
     }
 }
