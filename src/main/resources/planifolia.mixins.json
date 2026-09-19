@@ -6,6 +6,7 @@
   "client": [
     "BlockOcclusionCacheMixin",
     "DebugHudMixin",
+    "MinecraftClientMixin",
     "ModNioResourcePackMixin",
     "OptionsScreenMixin",
     "RenderSectionManagerMixin",
