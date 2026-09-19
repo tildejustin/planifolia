@@ -1,8 +1,8 @@
 package dev.tildejustin.planifolia.mixin;
 
+import dev.tildejustin.planifolia.Planifolia;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.options.*;
-import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
 
@@ -14,7 +14,7 @@ public abstract class SodiumGameOptionPagesMixin {
             index = 2
     )
     private static int modifyGammaSliderMaximum(int original) {
-        return MinecraftClient.getInstance().world == null ? 500 : original;
+        return Planifolia.restrictGamma() ? original : 500;
     }
 
     @Redirect(
