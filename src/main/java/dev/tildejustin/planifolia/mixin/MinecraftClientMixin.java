@@ -2,16 +2,20 @@ package dev.tildejustin.planifolia.mixin;
 
 import dev.tildejustin.planifolia.Planifolia;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.DownloadingTerrainScreen;
 import net.minecraft.client.world.ClientWorld;
-import org.spongepowered.asm.mixin.Mixin;
+import org.jetbrains.annotations.Nullable;
+import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MinecraftClient.class)
 public abstract class MinecraftClientMixin {
-    @Inject(method = "joinWorld", at = @At("HEAD"))
-    private void storeSetLevel(ClientWorld world, DownloadingTerrainScreen.WorldEntryReason worldEntryReason, CallbackInfo ci) {
-        if (world != null) Planifolia.setLevel = true;
+    @Shadow
+    @Nullable
+    public ClientWorld world;
+
+    @Inject(method = {"joinWorld", "method_1481(Lnet/minecraft/class_638;)V"}, at = @At("TAIL"))
+    private void storeSetLevel(CallbackInfo ci) {
+        if (this.world != null) Planifolia.setLevel = true;
     }
 }
