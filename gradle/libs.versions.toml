@@ -3,7 +3,7 @@ minecraft = "26.3"
 fabric_loader = "0.19.5"
 loom = "1.17-SNAPSHOT"
 mixin_squared = "0.2.0"
-sodium = "mc26.3-0.9.2-fabric"
+sodium = "mc26.3-0.9.3-beta.5-fabric"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
